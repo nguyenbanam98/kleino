@@ -53,7 +53,11 @@
             </div>
             <div class="form-group">
                 <label>Giá khuyến mãi</label>
-                <input type="text" class="form-control" name="sale">
+                <input type="text" class="form-control" name="sale" value="0">
+            </div>
+            <div class="form-group">
+                <label>Số lượng</label>
+                <input type="text" class="form-control" name="number" value="0">
             </div>
             <div class="form-group">
                 <label>Chọn danh mục</label>
@@ -63,10 +67,17 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Ảnh đại diện</label>
+                <label>Ảnh đại diện trước</label>
                 <input type="file"
                        class="form-control-file"
-                       name="feature_image_path"
+                       name="feature_image_before"
+                >
+            </div>
+            <div class="form-group">
+                <label>Ảnh đại diện sau</label>
+                <input type="file"
+                       class="form-control-file"
+                       name="feature_image_after"
                 >
             </div>
             <div class="form-group">

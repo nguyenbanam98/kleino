@@ -109,15 +109,16 @@ class AdminCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'bail|required|unique:categories|max:255',
+            'name' => 'required|string|max:255|unique:categories,name,'.$id.',id',
         ]);
-        $category = Category::findOrFail($id);
-        $category->saveCategory($request, $id);
+
+        Category::query()->findOrFail($id);
+        $this->saveCategory($request, $id);
 
         return redirect()->route('admin.categories.index');
     }
 
-    public function saveCategory($request, int $id = null)
+    private function saveCategory($request, int $id = null)
     {
 
         return Category::updateOrCreate(

@@ -11,7 +11,7 @@ class SliderAddRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,19 +21,11 @@ class SliderAddRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => 'required|max:255',
-            'description' => 'required',
-            'image_path' => 'required',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'name.required' => 'Tên không được trống',
+            'image_path' => 'required|image',
         ];
     }
 }

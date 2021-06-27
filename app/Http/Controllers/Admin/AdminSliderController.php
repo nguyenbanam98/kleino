@@ -34,10 +34,8 @@ class AdminSliderController extends Controller
     public function store(SliderAddRequest $request)
     {
         try {
-
             $dataInsert = [
                 'name' => $request->name,
-                'description' => $request->description,
             ];
             $dataImageSlider = $this->storageTraitUpload($request, 'image_path', 'slider');
             if (!empty($dataImageSlider)) {
@@ -47,10 +45,7 @@ class AdminSliderController extends Controller
             $this->slider->create($dataInsert);
 
             return redirect()->back()->with('success','Bạn đã thêm dữ liệu thành công');
-
-
         } catch (\Throwable $exception) {
-
             Log::error('Lỗi : ' . $exception->getMessage() . '---Line: ' . $exception->getLine());
         }
 
@@ -67,7 +62,6 @@ class AdminSliderController extends Controller
         try {
             $dataUpdate = [
                 'name' => $request->name,
-                'description' => $request->description,
             ];
             $dataImageSlider = $this->storageTraitUpload($request, 'image_path', 'slider');
 
@@ -82,9 +76,7 @@ class AdminSliderController extends Controller
         } catch (\Throwable $exception) {
             Log::error('Lỗi : ' . $exception->getMessage() . '---Line: ' . $exception->getLine());
         }
-
     }
-
 
     public function delete($id)
     {

@@ -11,10 +11,13 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255|unique:products,name,'.$this->id.',id',
-            'size' => ['required', 'unique:products,size,'.$this->id.',id'],
+            'name' => 'required|string|max:255',
+            'size' => ['required'],
             'price' => 'required|numeric',
-            'sale'  => 'required|numeric',
+            'sale'  => 'numeric',
+            'number'  => 'numeric',
+            'feature_image_before' => 'image',
+            'feature_image_after' => 'image',
             'description' => 'nullable|string'
         ];
     }

@@ -58,7 +58,11 @@
             </div>
             <div class="form-group">
                 <label>Giá khuyến mãi</label>
-                <input type="text" class="form-control" name="sale" value="{{$product->sale ?? ''}}">
+                <input type="text" class="form-control" name="sale" value="{{$product->sale ?? 0}}">
+            </div>
+            <div class="form-group">
+                <label>Số lượng</label>
+                <input type="text" class="form-control" name="number" value="{{ $product->phone_number ?? 0 }}">
             </div>
             <div class="form-group">
                 <label>Chọn danh mục</label>
@@ -68,14 +72,28 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Ảnh đại diện</label>
+                <label>Ảnh đại diện trước</label>
                 <input type="file"
                        class="form-control-file"
-                       name="feature_image_path"
+                       name="feature_image_before"
                 >
             </div>
             <div class="mb-2">
-                <img src="{{ $product->feature_image_path }}"
+                <img src="{{ $product->feature_image_before }}"
+                     style=" width: 130px;
+                height: 100px;
+                object-fit: cover;"
+                     class="card-img-top" alt="">
+            </div>
+            <div class="form-group">
+                <label>Ảnh đại diện sau</label>
+                <input type="file"
+                       class="form-control-file"
+                       name="feature_image_after"
+                >
+            </div>
+            <div class="mb-2">
+                <img src="{{ $product->feature_image_after }}"
                      style=" width: 130px;
                 height: 100px;
                 object-fit: cover;"
@@ -94,20 +112,17 @@
                        name="image_path[]"
                 >
             </div>
-            <div class="col-md-12 container_image_detail">
+            <div class="col-md-12 container">
                 <div class="row">
-                    @foreach($product->images as $producImageItem)
-                        <div class="col-md-3 mr-1">
-                            <div class="card">
-                                <img src="{{ $producImageItem->image_path }}" class="card-img-top" alt="" style=" width: 130px;
-                              height: 100px;
-                              object-fit: cover;">
-                            </div>
-                        </div>
-                    @endforeach
+                @foreach($product->images as $producImageItem)
+                       <img src="{{ $producImageItem->image_path }}" class="col-2" alt="" style="width: 130px;
+                      height: 100px;
+                      object-fit: cover"
+                       >
+                @endforeach
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-sm ml-3">Edit</button>
+            <button type="submit" class="btn btn-primary btn-sm mt-3 ml-3">Edit</button>
         </form>
     </section>
 @endsection

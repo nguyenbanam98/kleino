@@ -15,9 +15,6 @@ if (!function_exists('number_price'))
        if($sale == 0) {
            return $price;
        }
-
-       $price = ((100 - $sale) * $price) / 100;
-
-       return  $price;
+        return ((100 - $sale) * $price) / 100;
     }
 }

@@ -17,9 +17,9 @@
   @if(Session::has('success'))
   <div class="alert alert-success" role="alert">
     {{ Session('success') }}
-  </div> 
+  </div>
   @endif
-  
+
   <form action="{{ route('admin.sliders.store') }}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
@@ -30,22 +30,10 @@
              placeholder="Nhập tên"
              value="{{old('name')}}"
       >
-   
+
       </div>
       @error('name')
           <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-
-      <div class="form-group">
-          <label>Mô tả slider</label>
-          <textarea
-              class="form-control @error('description') is-invalid @enderror"
-              name="description" rows="4">{{ old('description') }}
-          </textarea>
-
-      </div>
-      @error('description')
-              <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <div class="form-group">
           <label>Hình ảnh</label>
@@ -58,9 +46,7 @@
       @error('image_path')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
-
     <button type="submit" class="btn btn-primary btn-sm ">Add slider</button>
-  
   </form>
 </section>
 

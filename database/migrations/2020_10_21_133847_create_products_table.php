@@ -22,8 +22,8 @@ class CreateProductsTable extends Migration
             $table->enum('size', ProductSizeType::getValues())->default('M');
             $table->text('description')->nullable();
             $table->string('slug')->unique();
-            $table->string('feature_image_path')->nullable();
-            $table->string('feature_image_name')->nullable();
+            $table->string('feature_image_before');
+            $table->string('feature_image_after');
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('SET NULL');
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('SET NULL');
             $table->tinyinteger('active')->default(1)->index();

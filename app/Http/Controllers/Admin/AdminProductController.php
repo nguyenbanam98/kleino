@@ -57,21 +57,23 @@ class AdminProductController extends Controller
         try {
             DB::beginTransaction();
             $dataProductCreate = [
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
+                'name' => $request->input('name'),
+                'slug' => Str::slug($request->input('name')),
                 'sku'  => $request->input('sku'),
                 'size' => $request->input('size'),
-                'price' => $request->price,
-                'user_id' => auth()->user()->id,
-                'category_id' => $request->category_id,
-                'sale' => $request->sale,
-                'description' => $request->description,
+                'price' => $request->input('price'),
+                'phone_number' => $request->input('number'),
+                'user_id' => auth()->id(),
+                'category_id' => $request->input('category_id'),
+                'sale' => $request->input('sale'),
+                'description' => $request->input('description'),
             ];
 
-            $dataUploadFeatureImage = $this->storageTraitUpload($request, 'feature_image_path', 'product');
-            if (!empty($dataUploadFeatureImage)) {
-                $dataProductCreate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
-                $dataProductCreate['feature_image_name'] = $dataUploadFeatureImage['file_name'];
+            $dataUploadImageBefore = $this->storageTraitUpload($request, 'feature_image_before', 'product');
+            $dataUploadImageAfter = $this->storageTraitUpload($request, 'feature_image_after', 'product');
+            if (!empty($dataUploadImageBefore) && !empty($dataUploadImageAfter)) {
+                $dataProductCreate['feature_image_before'] = $dataUploadImageBefore['file_path'];
+                $dataProductCreate['feature_image_after'] = $dataUploadImageAfter['file_path'];
             }
 
             $product = Product::query()->create($dataProductCreate);
@@ -111,20 +113,22 @@ class AdminProductController extends Controller
                 'sku'  => $request->input('sku'),
                 'size' => $request->input('size'),
                 'price' => $request->input('price'),
+                'phone_number' => $request->input('number'),
                 'content' => $request->input('content'),
                 'user_id' => auth()->user()->id,
                 'category_id' => $request->input('category_id'),
                 'sale' => $request->input('sale'),
                 'description' => $request->input('description'),
             ];
+
             $product = Product::findOrFail($id);
-            $dataUploadFeatureImage = $this->storageTraitUpload($request, 'feature_image_path', 'product');
-            if (!empty($dataUploadFeatureImage)) {
-
-                $this->deleteImage($product->feature_image_path);
-
-                $dataProductUpdate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
-                $dataProductUpdate['feature_image_name'] = $dataUploadFeatureImage['file_name'];
+            $dataUploadImageBefore = $this->storageTraitUpload($request, 'feature_image_before', 'product');
+            $dataUploadImageAfter = $this->storageTraitUpload($request, 'feature_image_after', 'product');
+            if (!empty($dataUploadImageBefore) && !empty($dataUploadImageAfter)) {
+                $this->deleteImage($product->feature_image_before);
+                $this->deleteImage($product->feature_image_after);
+                $dataProductUpdate['feature_image_before'] = $dataUploadImageBefore['file_path'];
+                $dataProductUpdate['feature_image_after'] = $dataUploadImageAfter['file_path'];
             }
 
             $product->update($dataProductUpdate);
