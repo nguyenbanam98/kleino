@@ -62,7 +62,7 @@
             </div>
             <div class="form-group">
                 <label>Số lượng</label>
-                <input type="text" class="form-control" name="number" value="{{ $product->phone_number ?? 0 }}">
+                <input type="text" class="form-control" name="number" value="{{ $product->product_number ?? 1 }}">
             </div>
             <div class="form-group">
                 <label>Chọn danh mục</label>

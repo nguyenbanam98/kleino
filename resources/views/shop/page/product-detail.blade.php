@@ -6,10 +6,10 @@
         <div class="col l-12 m-12 c-12">
             <ul class="breadcrumb__link">
                 <li>
-                    <a href="index.html">Trang chủ</a>
+                    <a href="/">Trang chủ</a>
                 </li>
                 <li>
-                    <a href="/categories.html">Sản phẩm mới</a>
+                    <a href="/san-pham">Sản phẩm mới</a>
                 </li>
                 <li>
                     <span>P GDragon 2.0 - BLACK</span>
@@ -25,37 +25,35 @@
             <div class="product__gallery">
                 <div class="product__gallery-thumbs-wrap hide-on-tablet-mobile">
                     <div class="product__gallery-thumbs">
-                        <div class="product__gallery-thumb active">
-                            <img src="{{asset('shop/assets/image/Product/1/1_ae35f5573a9c4d89aae7b313d9a7394d_master.jpg')}}" onclick="changeImageDetail('thumb-one')" id="thumb-one" alt="">
-                        </div>
-                        <div class="product__gallery-thumb">
-                            <img src="{{asset('shop/assets/image/Product/1/2_8d2071380f204903b8787d60373bc931_master.jpg')}}" onclick="changeImageDetail('thumb-two')" id="thumb-two" alt="">
-                        </div>
+                            <div class="product__gallery-thumb active">
+                                <img src="{{ $product->feature_image_before ?? '' }}"  onclick="changeImageDetail('thumb-one')" id="thumb-one" alt="">
+                            </div>
+                            <div class="product__gallery-thumb">
+                                <img src="{{ $product->feature_image_after ?? '' }}"  onclick="changeImageDetail('thumb-two')" id="thumb-two" alt="">
+                            </div>
                     </div>
                 </div>
 
                 <div class="product__image-detail">
                     <img class="hide-on-tablet-mobile" src="" alt="" id="img-detail">
-
                     <div class="product__image-slider image__main hide-on-pc">
-                        <div class="product__image-slider-item">
-                            <img src="{{asset('shop/assets/image/Product/1/1_ae35f5573a9c4d89aae7b313d9a7394d_master.jpg')}}" alt="">
-                        </div>
-                        <div class="product__image-slider-item">
-                            <img src="{{asset('shop/assets/image/Product/1/2_8d2071380f204903b8787d60373bc931_master.jpg')}}" alt="">
-                        </div>
+                        @foreach($product->images as $img)
+                            <div class="product__image-slider-item">
+                                <img src="{{ $img->image_path ?? '' }}" alt="">
+                            </div>
+                        @endforeach
                     </div>
 
                     <div class="product__image-button">
                         <div class="product__zoom-in">
-                                                <span class="zoom-in" aria-hidden="true">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" style="enable-background:new 0 0 36 36; width: 30px; height: 30px;" xml:space="preserve">
-                                                        <polyline points="6,14 9,11 14,16 16,14 11,9 14,6 6,6 "></polyline>
-                                                        <polyline points="22,6 25,9 20,14 22,16 27,11 30,14 30,6 "></polyline>
-                                                        <polyline points="30,22 27,25 22,20 20,22 25,27 22,30 30,30 "></polyline>
-                                                        <polyline points="14,30 11,27 16,22 14,20 9,25 6,22 6,30 "></polyline>
-                                                    </svg>
-                                                </span>
+                            <span class="zoom-in" aria-hidden="true">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" style="enable-background:new 0 0 36 36; width: 30px; height: 30px;" xml:space="preserve">
+                                    <polyline points="6,14 9,11 14,16 16,14 11,9 14,6 6,6 "></polyline>
+                                    <polyline points="22,6 25,9 20,14 22,16 27,11 30,14 30,6 "></polyline>
+                                    <polyline points="30,22 27,25 22,20 20,22 25,27 22,30 30,30 "></polyline>
+                                    <polyline points="14,30 11,27 16,22 14,20 9,25 6,22 6,30 "></polyline>
+                                </svg>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -119,7 +117,7 @@
                         <div class="bottom__input">
                             <input type="number" value="1" min="1">
                         </div>
-                        <button class="btn__addcart-bottom button dark" >Thêm vào giỏ</button>
+                        <a class="btn__add cart-bottom button dark" data-url="{{route('add.cart', ['id' => $product->id])}}">Thêm vào giỏ</a>
                     </div>
                 </div>
                 <ul class="product__description-content">

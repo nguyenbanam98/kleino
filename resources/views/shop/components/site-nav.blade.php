@@ -48,7 +48,9 @@
     <div class="site__nav-cart">
         <div class="site__nav-container">
             <p class="title">Giỏ hàng</p>
-            <x-shop.cart-detail />
+            <div class="cart_wrapper">
+                <x-shop.cart-detail />
+            </div>
         </div>
     </div>
     <div class="site__nav-menu">

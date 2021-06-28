@@ -796,6 +796,100 @@
     position: absolute;
     right: 10px;
 }
+
+/* Account HTML */
+.account__title {
+    padding: 30px 15px;
+    border-bottom: 1px solid #ededed;
+    text-align: center;
+}
+
+.account__title h1 {
+    font-size: 54px;
+}
+
+.account__title h1::after {
+    content: "";
+    background: #000;
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 50px auto 0;
+}
+
+.account__content {
+    margin: 10px 100px 30px;
+}
+
+.account__sidebar-title h3 {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.account__sidebar-list li a {
+    display: block;
+    position: relative;
+    padding: 5px 0px;
+    font-size: 14px;
+    color: #252a2b;
+}
+
+.account__sidebar-list li a::before {
+    content: "\f192";
+    font-family: "Font Awesome 5 Free";
+    font-size: 8px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: 2px;
+}
+
+.account__info .title h4 {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 8px;
+    margin-top: 15px;
+}
+
+.account__info .account__name p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 10px 0 5px;
+}
+
+.account__info .account__email p {
+    font-size: 14px;
+}
+
+.account__info .account__address-link a {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.account__order {
+    margin: 30px 0;
+    padding: 10px;
+    background-color: #f7f7f7;
+}
+
+.account__order .table {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.account__order .table p {
+    font-size: 14px;
+    color: #252a2b;
+}
 /* .collection__heading-sort .sort__dropdown-select option {
     position: absolute;
     top: 100%;

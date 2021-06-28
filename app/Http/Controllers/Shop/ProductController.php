@@ -25,6 +25,7 @@ class ProductController extends Controller
     public function addCart(Request $request, $id): JsonResponse
     {
         $product = Product::query()->findOrFail($id);
+
         $quantity = $request->input('quantity');
         $data['id'] = $id;
         $data['qty'] = $quantity;
@@ -38,12 +39,42 @@ class ProductController extends Controller
         ];
         Cart::add($data);
         $qtyCart = Cart::count();
-
+        $contents = Cart::content();
+        $view = view('components.shop.cart-detail', compact('contents'))->render();
         return response()->json([
             'code'    => 200,
             'message' => 'success',
             'count' => $qtyCart,
-            'data' => Cart::content()
-        ], 200);
+            'data' => Cart::content(),
+            'view' => $view
+        ]);
+    }
+
+    public function show()
+    {
+        $contents = Cart::content();
+
+        return view('components.shop.cart-detail', compact('contents'));
+    }
+
+    public function delete(Request $request)
+    {
+        $id = $request->input('id');
+        Cart::remove($id);
+        $contents = Cart::content();
+
+        return view('components.shop.cart-detail', compact('contents'));
+
+    }
+
+    public function updateQty(Request $request)
+    {
+
+        $qty = $request->input('quantity');
+        $id = $request->input('id');
+        Cart::update($id, $qty);
+        $contents = Cart::content();
+
+        return view('components.shop.cart-detail', compact('contents'));
     }
 }

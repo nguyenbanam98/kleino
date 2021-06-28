@@ -13,6 +13,10 @@ class Product extends Model
     protected $table = 'products';
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'price' => 'float',
+    ];
+
     protected $status = [
         1 => [
             'name' => 'public',
@@ -61,6 +65,10 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function getNumberPriceAttributes()
+    {
+        return number_price($this->price, $this->sale);
+    }
 
     public function getProductSearch($request)
     {

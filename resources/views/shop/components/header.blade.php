@@ -13,7 +13,7 @@
                 </div>
                 <div class="col l-4 m-8 c-8">
                     <div class="header__action">
-                        <a class="hide-on-tablet-mobile" href="">
+                        <a class="hide-on-tablet-mobile" href="/account">
                                     <span class="header__action-account">
                                         <svg class="icon__account" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
                                             <g><g id="account-circle">
@@ -65,7 +65,7 @@
                                 <a href="/">Trang chủ</a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="">
+                                <a href="/san-pham">
                                     Sản phẩm
                                     <i class="fas fa-angle-down"></i>
                                 </a>
@@ -197,3 +197,5 @@
         </div>
     </div>
 </header>
+
+

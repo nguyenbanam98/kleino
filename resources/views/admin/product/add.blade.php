@@ -57,7 +57,7 @@
             </div>
             <div class="form-group">
                 <label>Số lượng</label>
-                <input type="text" class="form-control" name="number" value="0">
+                <input type="text" class="form-control" name="number" value="1">
             </div>
             <div class="form-group">
                 <label>Chọn danh mục</label>
