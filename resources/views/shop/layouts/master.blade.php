@@ -47,6 +47,25 @@
 <script src="{{asset('shop/app.js')}}"></script>
 <script src="{{asset('shop/js/index.js')}}"></script>
 <script src="{{asset('shop/js/product.js')}}"></script>
+<script>
+    $(function () {
+        $(".keyword_search").keyup(function () {
+            let keyword = $(this).val();
+            if (keyword !== '') {
+                $.ajax({
+                    url: '/autocomplete',
+                    method: 'GET',
+                    data: {
+                        keyword
+                    }
+                }).then( data => {
+                    $(".result__content").empty()
+                    $(".result__content").html(data)
+                })
+            }
+        })
+    })
+</script>
 @stack('scripts')
 </body>
 </html>

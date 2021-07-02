@@ -3,7 +3,7 @@
         <div class="site__nav-container">
             <p class="title">Tìm kiếm</p>
             <form action="" class="site__nav-form">
-                <input class="site__nav-input" type="text" placeholder="Tìm kiếm sản phẩm...">
+                <input class="site__nav-input keyword_search" name="keyword" type="text" placeholder="Tìm kiếm sản phẩm...">
                 <button class="btn__search">
                     <svg version="1.1" class="icon__search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 27" style="enable-background:new 0 0 24 27;" xml:space="preserve">
                             <path d="M10,2C4.5,2,0,6.5,0,12s4.5,10,10,10s10-4.5,10-10S15.5,2,10,2z M10,19c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S13.9,19,10,19z"></path>
@@ -12,36 +12,7 @@
                 </button>
             </form>
             <div class="result__content">
-                <div class="result__item">
-                    <div class="result__item-details">
-                        <div class="details__name">
-                            <a href="">P Kleino Never Look Down</a>
-                        </div>
-                        <div class="details__price">
-                            <p>650.000₫</p>
-                        </div>
-                    </div>
-                    <div class="result__item-img">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="result__item">
-                    <div class="result__item-details">
-                        <div class="details__name">
-                            <a href="">P Kleino Never Look Down</a>
-                        </div>
-                        <div class="details__price">
-                            <p>650.000₫</p>
-                        </div>
-                    </div>
-                    <div class="result__item-img">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

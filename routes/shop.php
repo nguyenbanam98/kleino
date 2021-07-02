@@ -11,6 +11,7 @@ Route::group([
     Route::get('/', 'KleinoController@index')->name('index');
     Route::get('/san-pham', 'KleinoController@getAllProduct')->name('product.all');
     Route::get('/san-pham/all', 'KleinoController@selectProduct')->name('product.all');
+    Route::get('/autocomplete', 'ProductController@autoCompleteSearch')->name('autocomplete');
     Route::get('/product/{id}', 'ProductController@productDetail')->name('shop.product')->where('id', '[0-9]+');
     Route::get('/product/add/{id}', 'ProductController@addCart')->name('add.cart')->where('id', '[0-9]+');
     Route::get('/show-cart', 'ProductController@show')->name('show.cart');

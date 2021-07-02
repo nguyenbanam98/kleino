@@ -77,4 +77,17 @@ class ProductController extends Controller
 
         return view('components.shop.cart-detail', compact('contents'));
     }
+
+    public function autoCompleteSearch(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $products = [];
+        if (!empty($keyword)) {
+            $products = Product::query()
+                ->where('name', 'LIKE', "%{$keyword}%")
+                ->get();
+        }
+
+        return view('shop.components.result_search', compact('products'));
+    }
 }
