@@ -1,13 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('title')
-
 <title>Transaction</title>
-
 @endsection
 
 @section('content')
-
 
 <section class="section">
   <div class="section-header">
@@ -19,7 +16,7 @@
     @if(Session::has('success'))
   	<div class="alert alert-success" role="alert">
       {{ Session('success') }}
-	</div> 
+	</div>
 	@endif
   <br><br>
     <table class="table table-striped table-hover table-sm table-bordered">
@@ -82,7 +79,7 @@
                 </tr>
             @endforeach
             @endif
-                                
+
         </tbody>
         </table>
     {{ $transactions->links() }}

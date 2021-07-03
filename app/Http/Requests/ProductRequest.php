@@ -13,6 +13,7 @@ class ProductRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'size' => ['required'],
+            'sku' => 'required|unique:products,sku,' . $this->id,
             'price' => 'required|numeric',
             'sale'  => 'numeric',
             'number'  => 'numeric',

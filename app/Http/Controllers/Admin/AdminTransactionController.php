@@ -25,8 +25,7 @@ class AdminTransactionController extends Controller
 
     public function view($id)
     {
-        $orders = Order::with('product:id,name,slug')->where('transaction_id', $id)->get();
-        // dd($orders);
+        $orders = Order::with('product:id,name,slug,feature_image_before')->where('transaction_id', $id)->get();
         return view('admin.transaction.view', compact('orders'));
     }
 

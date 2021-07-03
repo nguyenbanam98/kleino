@@ -135,6 +135,6 @@ class AdminCategoryController extends Controller
 
     public function delete($id)
     {
-        return $this->deleteModelTrait($id, $this->category);;
+        return $this->deleteModelTrait($id, $this->category);
     }
 }

@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 
 @section('title')
-
 <title>Order</title>
-
 @endsection
 
+@push('css')
+    <link href="{{asset('admins/product/product.css')}}" rel="stylesheet" />
+@endpush
+
 @section('content')
-
-
 <section class="section">
   <div class="section-header">
     <h1>Order Page</h1>
@@ -38,10 +38,10 @@
                         {{$order->product->name}}
                      </td>
                     <td>
+                        <img src="{{ $order->product->feature_image_before }}" class="product_image_150_100">
                     </td>
                     <td>
                       {{number_format($order->price)}} VNĐ
-
                     </td>
                     <td>
                       {{$order->qty}}
@@ -56,13 +56,12 @@
                     </td>
                 </tr>
             @endforeach
-                                
+
         </tbody>
         </table>
 </div>
 
 </section>
-
 @endsection
 
 

@@ -11,13 +11,10 @@ class Transaction extends Model
 
     protected $paymentType = [
         1 => [
-            'name' => 'Trả Bằng Tiền Mặt',
+            'name' => 'Thanh toán khi giao hàng (COD)',
         ],
         2 => [
-            'name' => 'Thanh Toán Online',
-        ],
-        3 => [
-            'name' => 'Paypal',
+            'name' => 'Chuyển khoản qua ngân hàng',
         ],
     ];
 
@@ -52,7 +49,7 @@ class Transaction extends Model
 
     public function shop()
     {
-        return $this->belongsTo(Shop::class, 'customer_id');
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 
 }

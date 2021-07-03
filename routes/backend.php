@@ -78,6 +78,19 @@ Route::group([
         Route::get('/delete-order/{id}', 'AdminTransactionController@deleteOrder')->name('delete.order');
         Route::get('/{action}/{id}', 'AdminTransactionController@action')->name('action');
     });
+
+    // article
+    Route::group([
+        'prefix' => 'articles',
+        'as' => 'articles.',
+    ], function () {
+        Route::get('/', 'AdminArticleController@index')->name('index');
+        Route::get('/create', 'AdminArticleController@create')->name('create');
+        Route::post('/store', 'AdminArticleController@store')->name('store');
+        Route::get('/edit/{id}', 'AdminArticleController@edit')->name('edit');
+        Route::post('/update/{id}', 'AdminArticleController@update')->name('update');
+        Route::get('/delete/{id}', 'AdminArticleController@delete')->name('delete');
+    });
 });
 
 // Auth admin

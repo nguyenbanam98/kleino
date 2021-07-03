@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Transaction;
+use Auth;
+use DB;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -41,6 +45,7 @@ class ProductController extends Controller
         $qtyCart = Cart::count();
         $contents = Cart::content();
         $view = view('components.shop.cart-detail', compact('contents'))->render();
+
         return response()->json([
             'code'    => 200,
             'message' => 'success',
@@ -89,5 +94,86 @@ class ProductController extends Controller
         }
 
         return view('shop.components.result_search', compact('products'));
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $products = Product::query()
+                ->where('name', 'LIKE', "%{$keyword}%")
+                ->paginate(20);
+
+        if (!empty($keyword)) {
+            return view('shop.page.search', compact('products', 'keyword'));
+        }
+
+        return view('errors.search_error', compact('keyword'));
+    }
+
+    public function checkout()
+    {
+        $contents = Cart::content();
+
+        $transaction = get_data_user('customer', 'transaction');
+
+        return view('shop.page.checkout', compact('contents', 'transaction'));
+    }
+
+    public function checkoutSuccess()
+    {
+        $contents = Cart::content();
+
+        $transaction = get_data_user('customer', 'transaction');
+
+        return view('shop.page.checkout_success', compact('contents', 'transaction'));
+    }
+
+    public function save(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            $transaction = $this->saveCheckout($request);
+            $contents = Cart::content();
+
+            foreach ($contents as $value) {
+                Order::create([
+                    'transaction_id' => $transaction->id,
+                    'product_id' => $value->id,
+                    'sale' => $value->options->sale,
+                    'qty' => $value->qty,
+                    'price' => $value->price,
+                ]);
+                DB::table('products')->where('id', $value->id)->increment('pay');
+            }
+
+            Cart::destroy();
+            DB::commit();
+
+            return redirect()->route('checkout.success');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+
+            return redirect()->back()->with('err','Bạn chưa nhấn cho phép');
+        }
+    }
+
+    public function saveCheckout($request, int $id = null)
+    {
+
+        return Transaction::query()->updateOrCreate(
+            [
+                'id' => $id,
+            ],
+            [
+                'email' => auth('customer')->user()->email,
+                'customer_id' => Auth::guard('customer')->id(),
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'notes' => $request->notes ?? '',
+                'type' => $request->type,
+                'total_money' => str_replace(',', '', Cart::subtotal())
+            ]
+        );
     }
 }

@@ -1,14 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('title')
-
 <title>Category</title>
-
 @endsection
 
 @section('content')
-
-
 <section class="section">
   <div class="section-header">
     <h1>Category Page</h1>

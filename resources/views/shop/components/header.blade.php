@@ -70,70 +70,36 @@
                                     <i class="fas fa-angle-down"></i>
                                 </a>
                                 <ul class="submenu">
-                                    <li>
-                                        <a href="">
-                                            Áo
-                                            <i class="fas fa-angle-right"></i>
-                                        </a>
+                                    <li><a href="">Áo<i class="fas fa-angle-right"></i></a>
                                         <ul class="submenu">
-                                            <li>
-                                                <a href="">Áo dài tay</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Áo khoác</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Áo phông</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Áo sơ mi</a>
-                                            </li>
+                                            <li><a href="">Áo dài tay</a></li>
+                                            <li><a href="">Áo khoác</a></li>
+                                            <li><a href="">Áo phông</a></li>
+                                            <li><a href="">Áo sơ mi</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="">
-                                            Quần
-                                            <i class="fas fa-angle-right"></i>
-                                        </a>
+                                    <li><a href="">Quần<i class="fas fa-angle-right"></i></a>
                                         <ul class="submenu">
-                                            <li>
-                                                <a href="">Quần Jean</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Quần nỉ</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Quần Short</a>
-                                            </li>
+                                            <li><a href="">Quần Jean</a></li>
+                                            <li><a href="">Quần nỉ</a></li>
+                                            <li><a href="">Quần Short</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="">
-                                            Phụ kiện
-                                            <i class="fas fa-angle-right"></i>
-                                        </a>
+                                    <li><a href="">Phụ kiện<i class="fas fa-angle-right"></i></a>
                                         <ul class="submenu">
-                                            <li>
-                                                <a href="">Xích quần</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Dây chuyền</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Ốp điện thoại</a>
-                                            </li>
+                                            <li><a href="">Xích quần</a></li>
+                                            <li><a href="">Dây chuyền</a></li>
+                                            <li><a href="">Ốp điện thoại</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="">Giày dép</a>
-                                    </li>
+                                    <li><a href="">Giày dép</a></li>
                                 </ul>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="">SALE</a>
+                                <a href="/san-pham">SALE</a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="">Tin tức</a>
+                                <a href="/tin-tuc">Tin tức</a>
                             </li>
                             <li class="header__navbar-item">
                                 <a href="">Giới thiệu</a>

@@ -17,9 +17,11 @@
                     <img src="{{ $product->feature_image_before }}" alt="{{ $product->name }}">
                     <img src="{{ $product->feature_image_after }}" alt="{{ $product->name }}">
                 </a>
-                <div class="collection__product-discount">
-                    <span>-{{$product->sale ?? 0}}%</span>
-                </div>
+                @if ($product->sale)
+                    <div class="collection__product-discount">
+                        <span>-{{$product->sale ?? 0}}%</span>
+                    </div>
+                @endif
                 <div class="collection__product-details">
                     <div class="details__name">
                         <a href="{{ route('shop.product', ['id' => $product->id]) }}">{{ $product->name ?? '' }}</a>

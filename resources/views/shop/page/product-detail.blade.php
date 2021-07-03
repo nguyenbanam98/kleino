@@ -12,7 +12,7 @@
                     <a href="/san-pham">Sản phẩm mới</a>
                 </li>
                 <li>
-                    <span>P GDragon 2.0 - BLACK</span>
+                    <span>{{ $product->name ?? '' }}</span>
                 </li>
             </ul>
         </div>
@@ -68,9 +68,11 @@
                 <div class="product__price">
                     @if($product->sale)
                         <span class="sale">-{{ $product->sale }}%</span>
+                        <span class="price">{{number_format(number_price($product->price, $product->sale))}}₫</span>
+                        <del>{{number_format($product->price)}}₫</del>
+                    @else
+                        <span class="price">{{number_format($product->price)}}₫</span>
                     @endif
-                    <span class="price">{{number_format(number_price($product->price, $product->sale))}}₫</span>
-                    <del>{{number_format($product->price)}}₫</del>
                 </div>
                 <div class="product__swatch">
                     <div class="swatch__title">

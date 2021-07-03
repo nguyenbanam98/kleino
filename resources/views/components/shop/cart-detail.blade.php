@@ -43,7 +43,7 @@
                 <a href="" class="link__cart button dark">Xem giỏ hàng</a>
             </td>
             <td>
-                <a href="" class="link__checkout button dark">Thanh toán</a>
+                <a href="/thanh-toan" class="link__checkout button dark">Thanh toán</a>
             </td>
         </tr>
         </tbody>
