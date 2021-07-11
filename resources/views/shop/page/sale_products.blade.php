@@ -22,7 +22,7 @@
         <div class="collection__heading row no-gutters">
             <div class="col l-8 m-8 c-12">
                 <div class="collection__heading-title">
-                    <h2>Tất cả sản phẩm</h2>
+                    <h2>Tất cả sản phẩm đang sale</h2>
                 </div>
             </div>
             <div class="col l-4 m-4 c-12">

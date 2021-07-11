@@ -32,7 +32,7 @@
                 <th scope="col">Hình ảnh</th>
                 <th scope="col">Size</th>
                 <th scope="col">Danh mục</th>
-                <th scope="col">Trang thai</th>
+                <th scope="col">Số lượng</th>
                 <th scope="col">Nổi bật</th>
                 <th scope="col">Action</th>
 			</tr>
@@ -47,7 +47,7 @@
             <td>{{ $productItem->size ?? '' }}</td>
 			<td>{{ optional($productItem->category)->name ?? '' }}</td>
 			<td>
-				<a href="{{route('admin.products.action', ['active','id' => $productItem->id])}}" class="badge badge-{{$productItem->getStatus($productItem->active)['class']}}">{{$productItem->getStatus($productItem->active)['name']}}</a>
+				{{ $productItem->product_number ?? 0 }}
 			</td>
 			<td>
 					<a href="{{route('admin.products.action', ['hot','id' => $productItem->id])}}" class="badge badge-{{$productItem->getHot($productItem->hot)['class']}}">{{$productItem->getHot($productItem->hot)['name']}}</a>

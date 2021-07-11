@@ -10,7 +10,8 @@ Route::group([
 
     Route::get('/', 'KleinoController@index')->name('index');
     Route::get('/san-pham', 'KleinoController@getAllProduct')->name('product.all');
-    Route::get('/san-pham/all', 'KleinoController@selectProduct')->name('product.all');
+    Route::get('/san-pham/sale', 'KleinoController@getAllSaleProduct')->name('product.sale');
+    Route::get('/danh-muc/{slug}', 'KleinoController@getCategory')->name('product.category');
     Route::get('/autocomplete', 'ProductController@autoCompleteSearch')->name('autocomplete');
     Route::get('/search', 'ProductController@search')->name('search');
     Route::get('/product/{id}', 'ProductController@productDetail')->name('shop.product')->where('id', '[0-9]+');

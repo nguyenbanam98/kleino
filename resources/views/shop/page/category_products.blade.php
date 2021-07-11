@@ -1,3 +1,4 @@
+
 @extends('shop.layouts.master')
 
 @section('content')
@@ -9,7 +10,7 @@
                         <a href="/">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="#">Danh mục</a>
+                        <a href="{{ request()->fullUrl() }}">{{ $category->name ?? 'Danh mục' }}</a>
                     </li>
                     <li>
                         <span>Tất cả sản phẩm</span>
@@ -24,6 +25,9 @@
                 <div class="collection__heading-title">
                     <h2>Tất cả sản phẩm</h2>
                 </div>
+                @if($products->isEmpty())
+                    <p>Không có sản phầm</p>
+                @endif
             </div>
             <div class="col l-4 m-4 c-12">
                 <div class="collection__heading-sort">

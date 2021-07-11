@@ -134,3 +134,7 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+@endpush

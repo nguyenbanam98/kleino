@@ -70,33 +70,11 @@
                                     <i class="fas fa-angle-down"></i>
                                 </a>
                                 <ul class="submenu">
-                                    <li><a href="">Áo<i class="fas fa-angle-right"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="">Áo dài tay</a></li>
-                                            <li><a href="">Áo khoác</a></li>
-                                            <li><a href="">Áo phông</a></li>
-                                            <li><a href="">Áo sơ mi</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Quần<i class="fas fa-angle-right"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="">Quần Jean</a></li>
-                                            <li><a href="">Quần nỉ</a></li>
-                                            <li><a href="">Quần Short</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Phụ kiện<i class="fas fa-angle-right"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="">Xích quần</a></li>
-                                            <li><a href="">Dây chuyền</a></li>
-                                            <li><a href="">Ốp điện thoại</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Giày dép</a></li>
+                                   <x-shop.category />
                                 </ul>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="/san-pham">SALE</a>
+                                <a href="/san-pham/sale">SALE</a>
                             </li>
                             <li class="header__navbar-item">
                                 <a href="/tin-tuc">Tin tức</a>
@@ -116,7 +94,7 @@
             <div class="row">
                 <div class="col l-0 m-12 c-12">
                     <div class="header__mobile-search">
-                        <form action="/autocomplete" class="search__form" method="get">
+                        <form action="/search" class="search__form" method="get">
                             <input class="search__input keyword_search" name="keyword" type="text" placeholder="Tìm kiếm sản phẩm...">
                             <button class="btn__search">
                                 <svg version="1.1" class="icon__search-mobile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 27" style="enable-background:new 0 0 24 27;" xml:space="preserve">

@@ -42,9 +42,6 @@
                     <div class="account__email">
                         <p>{{ $user->email ?? '' }}</p>
                     </div>
-{{--                    <div class="account__address-link">--}}
-{{--                        <a href="">Xem địa chỉ</a>--}}
-{{--                    </div>--}}
                 </div>
                 <div class="account__order">
                     <div class="table">

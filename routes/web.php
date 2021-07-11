@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 /**
  * back-end
  */
-require __DIR__ . './backend.php';
+require __DIR__ . '/backend.php';
 
 /**
  * Font end
  */
-require __DIR__ . './shop.php';
+require __DIR__ . '/shop.php';
 
 
 

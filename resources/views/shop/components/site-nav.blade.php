@@ -31,10 +31,10 @@
                 <div class="menu__collection">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <a href="/index.html">Trang chủ</a>
+                            <a href="/">Trang chủ</a>
                         </li>
                         <li class="menu__item has__sub level0">
-                            <a href="/collection.html">
+                            <a href="/san-pham">
                                 Sản phẩm
                             </a>
                             <span class="icon__subnav">
@@ -107,7 +107,7 @@
                             </ul>
                         </li>
                         <li class="menu__item">
-                            <a href="/collection__sale.html">SALE</a>
+                            <a href="/san-pham/sale">SALE</a>
                         </li>
                         <li class="menu__item">
                             <a href="">Tin tức</a>

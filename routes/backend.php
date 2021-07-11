@@ -66,6 +66,19 @@ Route::group([
         Route::get('/delete/{id}', 'AdminUserController@delete')->name('delete');
     });
 
+    // Customer
+    Route::group([
+        'prefix' => 'customer',
+        'as' => 'customer.',
+    ], function () {
+        Route::get('/', 'AdminCustomerController@index')->name('index');
+        Route::get('/create', 'AdminCustomerController@create')->name('create');
+        Route::post('/store', 'AdminCustomerController@store')->name('store');
+        Route::get('/edit/{id}', 'AdminCustomerController@edit')->name('edit');
+        Route::post('/update/{id}', 'AdminCustomerController@update')->name('update');
+        Route::get('/delete/{id}', 'AdminCustomerController@delete')->name('delete');
+    });
+
     // Transaction
     Route::group([
         'prefix' => 'transaction',
