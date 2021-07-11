@@ -27,7 +27,7 @@
             <div class="banner__category-caption">
                 <span>NEW COLLECTION</span>
                 <h3>SPECIAL PRICE</h3>
-                <a href="" class="button">Mua ngay</a>
+                <a href="/danh-muc/ao-phong" class="button">Mua ngay</a>
             </div>
         </div>
         <div class="col l-4 m-4 c-12 banner__category-item">
