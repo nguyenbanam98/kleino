@@ -60,7 +60,7 @@
                                 </span>
                             <p>Phương thức thanh toán</p>
                             <span class="checkouts__payment">
-                                    {{$transaction->getType($transaction->type)['name'] ?? ''}}
+                                    {{$transaction->getType($transaction->type)['name']}}
                                 </span>
                         </div>
                         <div class="section__footer">

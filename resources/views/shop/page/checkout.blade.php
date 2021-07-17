@@ -125,12 +125,10 @@
                         <div class="section__title">
                             <h3>Thông tin giao hàng</h3>
                         </div>
-                        @if(empty(auth('customer')->user()))
                             <div class="content__text">
                                 <span>Bạn đã có tài khoản?</span>
                                 <a href="/dang-nhap">Đăng nhập</a>
                             </div>
-                        @else
                             <form action="{{route('checkout')}}" method="post" novalidate="novalidate">
                                 @csrf
                             <div class="section__fieldset">
@@ -139,6 +137,9 @@
                                 </div>
                                 <div class="fieldset__input">
                                     <input type="text" placeholder="Số điện thoại" name="phone" value="{{$transaction->phone ?? ''}}" >
+                                </div>
+                                <div class="fieldset__input">
+                                    <input type="text" placeholder="Email" name="email" value="{{$transaction->email ?? ''}}" >
                                 </div>
                                 <div class="fieldset__input">
                                     <input type="text" placeholder="Địa chỉ" name="address" value="{{$transaction->address ?? ''}}">
@@ -215,7 +216,6 @@
                                 </button>
                         </div>
                             </form>
-                        @endif
                     </div>
                 </div>
                 <div class="main__footer">
