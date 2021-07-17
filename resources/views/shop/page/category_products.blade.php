@@ -23,7 +23,7 @@
         <div class="collection__heading row no-gutters">
             <div class="col l-8 m-8 c-12">
                 <div class="collection__heading-title">
-                    <h2>Tất cả sản phẩm</h2>
+                    <h2>{{ $category->name }}</h2>
                 </div>
                 @if($products->isEmpty())
                     <p>Không có sản phầm</p>

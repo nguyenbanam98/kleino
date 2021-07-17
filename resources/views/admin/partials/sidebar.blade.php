@@ -41,7 +41,7 @@
           <a href="{{route('admin.transactions.index')}}" class="nav-link" ><i class="fas fa-cog"></i> <span>Transaction</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Người dùng</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Quản trị viên</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('admin.users.index')}}">Danh sách</a></li>
             <li><a class="nav-link" href="{{route('admin.users.create')}}">Thêm</a></li>

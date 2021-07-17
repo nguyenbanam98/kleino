@@ -133,6 +133,20 @@
         </div>
     </div>
 </div>
+
+<div class="divzoom">
+    <div class="divzoom__main">
+        <div class="product__thumb">
+            <img src="{{ $product->feature_image_before ?? '' }}" onclick="changeImageDetail('thumb-one')" id="thumb-one" alt="">
+        </div>
+        <div class="product__thumb">
+            <img src="{{ $product->feature_image_after ?? '' }}" onclick="changeImageDetail('thumb-two')" id="thumb-two" alt="">
+        </div>
+    </div>
+    <div class="divzoom__close btn__close">
+        <span></span>
+    </div>
+</div>
 @endsection
 
 @push('scripts')
