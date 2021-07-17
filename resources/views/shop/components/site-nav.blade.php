@@ -12,7 +12,7 @@
                 </button>
             </form>
             <div class="result__content">
-
+                
             </div>
         </div>
     </div>
@@ -41,69 +41,7 @@
                                     <i class="fa fa-angle-down"></i>
                                 </span>
                             <ul class="submenu2 subnav__dad">
-                                <li class="submenu2__level1">
-                                    <a href="">
-                                        Áo
-                                    </a>
-                                    <span class="icon__subnav">
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                    <ul class="submenu2 subnav__child">
-                                        <li>
-                                            <a href="">Áo dài tay</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Áo khoác</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Áo phông</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Áo sơ mi</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="submenu2__level1">
-                                    <a href="">
-                                        Quần
-                                    </a>
-                                    <span class="icon__subnav">
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                    <ul class="submenu2 subnav__child">
-                                        <li>
-                                            <a href="">Quần Jean</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Quần nỉ</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Quần Short</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="submenu2__level1">
-                                    <a href="">
-                                        Phụ kiện
-                                    </a>
-                                    <span class="icon__subnav">
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                    <ul class="submenu2 subnav__child">
-                                        <li>
-                                            <a href="">Xích quần</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Dây chuyền</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Ốp điện thoại</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">Giày dép</a>
-                                </li>
+                                <x-shop.category-sitenav />
                             </ul>
                         </li>
                         <li class="menu__item">
@@ -123,11 +61,11 @@
 
                 <div class="menu__about">
                     <ul class="menu__link">
-                        <li><a href="">Tìm kiếm</a></li>
-                        <li><a href="">Giới thiệu</a></li>
-                        <li><a href="">Chính sách đổi trả</a></li>
-                        <li><a href="">Chính sách bảo mật</a></li>
-                        <li><a href="">Điều khoản dịch vụ</a></li>
+                        <li><a href="/search">Tìm kiếm</a></li>
+                        <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                        <li><a href="/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
+                        <li><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+                        <li><a href="/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></li>
                     </ul>
 
                     <div class="menu__login">

@@ -30,12 +30,12 @@
                     <i class="fa fa-angle-down"></i>
                     <form method="get">
                         <select class="sort__dropdown-select" id="select_search" name="sort_by">
+                            <option value="created-descending" {{ request()->sort_by === 'created-descending' ? 'selected' : '' }}>Mới nhất</option>
+                            <option value="created-ascending" {{ request()->sort_by === 'created-ascending' ? 'selected' : '' }}>Cũ nhất</option>
                             <option value="price-ascending" {{ request()->sort_by === 'price-ascending' ? 'selected' : '' }}>Giá: Tăng dần</option>
                             <option value="price-descending" {{ request()->sort_by === 'price-descending' ? 'selected' : '' }}>Giá: Giảm dần</option>
                             <option value="title-ascending" {{ request()->sort_by === 'title-ascending' ? 'selected' : '' }}>Tên: A-Z</option>
                             <option value="title-descending" {{ request()->sort_by === 'title-descending' ? 'selected' : '' }}>Tên: Z-A</option>
-                            <option value="created-ascending" {{ request()->sort_by === 'created-ascending' ? 'selected' : '' }}>Cũ nhất</option>
-                            <option value="created-descending" {{ request()->sort_by === 'created-descending' ? 'selected' : '' }}>Mới nhất</option>
                         </select>
                     </form>
                 </div>

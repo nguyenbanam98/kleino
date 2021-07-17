@@ -26,6 +26,26 @@ class KleinoController extends Controller
         return view('shop.page.account', compact('user'));
     }
 
+    public function aboutUs()
+    {
+        return view('shop.page.about_us');
+    }
+
+    public function policyPrivacy()
+    {
+        return view('shop.page.policy_privacy');
+    }
+
+    public function policyReturn()
+    {
+        return view('shop.page.policy_return');
+    }
+
+    public function termsService()
+    {
+        return view('shop.page.terms_service');
+    }
+
     public function getAllProduct(Request $request)
     {
         $sort = $request->get('sort_by');
@@ -34,6 +54,15 @@ class KleinoController extends Controller
         if (!$sort) {
             $products = $products->latest()->paginate(10);
         }
+
+        if ($sort === 'created-descending') {
+            $products = $products->orderBy('created_at', 'desc')->paginate(10);
+        }
+
+        if ($sort === 'created-ascending') {
+            $products = $products->orderBy('created_at')->paginate(10);
+        }
+
 
         if ($sort === 'price-ascending') {
             $products = $products->orderBy('price')->paginate(10);
@@ -49,14 +78,6 @@ class KleinoController extends Controller
 
         if ($sort === 'title-descending') {
             $products = $products->orderBy('name', 'desc')->paginate(10);
-        }
-
-        if ($sort === 'created-descending') {
-            $products = $products->orderBy('created_at', 'desc')->paginate(10);
-        }
-
-        if ($sort === 'created-ascending') {
-            $products = $products->orderBy('created_at')->paginate(10);
         }
 
         return view('shop.page.products', compact('products'));

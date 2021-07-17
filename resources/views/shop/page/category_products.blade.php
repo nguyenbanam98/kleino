@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class=collection" style="padding: 0 15px">
+    <div class="collection" style="padding: 0 15px">
         <div class="collection__heading row no-gutters">
             <div class="col l-8 m-8 c-12">
                 <div class="collection__heading-title">
