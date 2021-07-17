@@ -1,13 +1,13 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    <title>User</title>
+    <title>Admin</title>
 @endsection
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Add user</h1>
+            <h1>Add admin</h1>
         </div>
         @if(count($errors)>0)
             @foreach($errors->all() as $error)
@@ -24,7 +24,7 @@
         <form action="{{ route('admin.users.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label>Name user</label>
+                <label>Name admin</label>
                 <input type="text" class="form-control" name="name">
             </div>
             <div class="form-group">
