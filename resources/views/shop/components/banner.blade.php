@@ -4,7 +4,7 @@
         <div class="slider__item" style="background-image: url({{asset('shop/assets/image/slideshow_3.jpg')}});"></div>
     @else
         @foreach($sliders as $slider)
-            <div class="slider__item" style="background-image: url({{ $slider->image_path }});"></div>
+            <div class="slider__item" style="background-image: url({{ $slider->image_path }});"><a href="/san-pham"></a></div>
         @endforeach
     @endif
 </div>
@@ -15,9 +15,9 @@
                 <div class="banner__category-image" style="background-image: url({{asset('shop/assets/image/block_home_category1.jpg')}});"></div>
             </a>
             <div class="banner__category-caption">
-                <span>SALE UP TO 70%</span>
-                <h3>SPECIAL PRICE</h3>
-                <a href="" class="button">Mua ngay</a>
+                <span>SHIRTS</span>
+                <h3>SUMMER 2021 COLLECTION</h3>
+                <a href="/danh-muc/ao-so-mi" class="button">Mua ngay</a>
             </div>
         </div>
         <div class="col l-4 m-4 c-12 banner__category-item">
@@ -26,8 +26,8 @@
             </a>
             <div class="banner__category-caption">
                 <span>NEW COLLECTION</span>
-                <h3>SPECIAL PRICE</h3>
-                <a href="/danh-muc/ao-phong" class="button">Mua ngay</a>
+                <h3>JACKET</h3>
+                <a href="/danh-muc/ao-khoac" class="button">Mua ngay</a>
             </div>
         </div>
         <div class="col l-4 m-4 c-12 banner__category-item">
@@ -36,8 +36,8 @@
             </a>
             <div class="banner__category-caption">
                 <span>NEW COLLECTION</span>
-                <h3>SPECIAL PRICE</h3>
-                <a href="" class="button">Mua ngay</a>
+                <h3>T-SHIRT</h3>
+                <a href="/danh-muc/ao-phong" class="button">Mua ngay</a>
             </div>
         </div>
     </div>

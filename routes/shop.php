@@ -9,6 +9,10 @@ Route::group([
     Route::post('dang-ky', 'AuthController@create')->name('post.register');
 
     Route::get('/', 'KleinoController@index')->name('index');
+    Route::get('gioi-thieu', 'KleinoController@aboutUs');
+    Route::get('chinh-sach-bao-mat', 'KleinoController@policyPrivacy');
+    Route::get('chinh-sach-doi-tra', 'KleinoController@policyReturn');
+    Route::get('dieu-khoan-dich-vu', 'KleinoController@termsService');
     Route::get('/san-pham', 'KleinoController@getAllProduct')->name('product.all');
     Route::get('/san-pham/sale', 'KleinoController@getAllSaleProduct')->name('product.sale');
     Route::get('/danh-muc/{slug}', 'KleinoController@getCategory')->name('product.category');

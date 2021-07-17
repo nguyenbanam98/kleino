@@ -80,10 +80,10 @@
                                 <a href="/tin-tuc">Tin tức</a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="">Giới thiệu</a>
+                                <a href="/chinh-sach-doi-tra">Chính sách</a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="">Liên hệ</a>
+                                <a href="/gioi-thieu">Giới thiệu</a>
                             </li>
                         </ul>
                     </nav>

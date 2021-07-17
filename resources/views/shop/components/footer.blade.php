@@ -61,11 +61,11 @@
                     </div>
                     <div class="footer__content">
                         <ul class="footer__link">
-                            <li><a href="">Tìm kiếm</a></li>
-                            <li><a href="">Giới thiệu</a></li>
-                            <li><a href="">Chính sách đổi trả</a></li>
-                            <li><a href="">Chính sách bảo mật</a></li>
-                            <li><a href="">Điều khoản dịch vụ</a></li>
+                            <li><a href="/search">Tìm kiếm</a></li>
+                            <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                            <li><a href="/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
+                            <li><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+                            <li><a href="/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -104,13 +104,13 @@
                                 data-href="https://www.facebook.com/kleinovietnam" data-height="300" data-small-header="false" data-adapt-container-width="true"
                                 data-hide-cover="false" data-show-facepile="true" data-show-posts="false" fb-xfbml-state="rendered"
                                 fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=0&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fkleinovietnam&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false">
-                                            <span style="vertical-align: bottom; width: 340px; height: 0px;">
-                                                <iframe name="f21241e83ef577c"
-                                                        width="1000px" height="300px"
-                                                        data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v10.0/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2579f48b8539b8%26domain%3Dkleino.vn%26origin%3Dhttps%253A%252F%252Fkleino.vn%252Ff2671f16ab1e278%26relation%3Dparent.parent&amp;container_width=0&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fkleinovietnam&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false"
-                                                        class="" style="border: none; visibility: visible; width: 340px; height: 0px;">
-                                                </iframe>
-                                            </span>
+                                    <span style="vertical-align: bottom; width: 340px; height: 0px;">
+                                        <iframe name="f21241e83ef577c"
+                                                width="1000px" height="300px"
+                                                data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v10.0/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2579f48b8539b8%26domain%3Dkleino.vn%26origin%3Dhttps%253A%252F%252Fkleino.vn%252Ff2671f16ab1e278%26relation%3Dparent.parent&amp;container_width=0&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fkleinovietnam&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false"
+                                                class="" style="border: none; visibility: visible; width: 340px; height: 0px;">
+                                        </iframe>
+                                    </span>
                             </div>
                         </div>
                         <script>

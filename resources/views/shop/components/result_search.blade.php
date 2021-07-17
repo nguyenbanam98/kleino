@@ -16,6 +16,11 @@
                     </div>
                 @endif
             </div>
+            <div class="result__item-img">
+                <a href="">
+                    <img src="{{ $product->feature_image_before ?? '' }}" alt="">
+                </a>
+            </div>
         </div>
     @endforeach
 @endif
