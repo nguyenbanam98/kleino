@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Slider;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -22,8 +23,9 @@ class KleinoController extends Controller
     public function account()
     {
         $user = Auth::guard('customer')->user();
+        $transactions = Transaction::query()->where('customer_id', $user->id)->latest()->get();
 
-        return view('shop.page.account', compact('user'));
+        return view('shop.page.account', compact('user', 'transactions'));
     }
 
     public function aboutUs()

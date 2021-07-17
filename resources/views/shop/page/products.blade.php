@@ -29,6 +29,7 @@
                 <div class="collection__heading-sort">
                     <i class="fa fa-angle-down"></i>
                     <form method="get">
+                        <input type="hidden" name="page" value="{{ request()->get('page', 1) }}">
                         <select class="sort__dropdown-select" id="select_search" name="sort_by">
                             <option value="created-descending" {{ request()->sort_by === 'created-descending' ? 'selected' : '' }}>Mới nhất</option>
                             <option value="created-ascending" {{ request()->sort_by === 'created-ascending' ? 'selected' : '' }}>Cũ nhất</option>

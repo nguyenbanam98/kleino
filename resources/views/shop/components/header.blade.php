@@ -61,10 +61,10 @@
                 <div class="col l-8 m-0 c-0">
                     <nav class="header__navbar">
                         <ul class="header__navbar-list">
-                            <li class="header__navbar-item active">
+                            <li class="header__navbar-item {{ active_menu() }}">
                                 <a href="/">Trang chủ</a>
                             </li>
-                            <li class="header__navbar-item">
+                            <li class="header__navbar-item {{ active_menu('san-pham') }} {{ request()->segment(1) === 'danh-muc' ? 'active' : '' }}">
                                 <a href="/san-pham">
                                     Sản phẩm
                                     <i class="fas fa-angle-down"></i>
@@ -73,16 +73,16 @@
                                    <x-shop.category />
                                 </ul>
                             </li>
-                            <li class="header__navbar-item">
+                            <li class="header__navbar-item {{ active_menu('san-pham/sale') }}">
                                 <a href="/san-pham/sale">SALE</a>
                             </li>
-                            <li class="header__navbar-item">
+                            <li class="header__navbar-item {{ active_menu('tin-tuc') }}">
                                 <a href="/tin-tuc">Tin tức</a>
                             </li>
-                            <li class="header__navbar-item">
+                            <li class="header__navbar-item {{ active_menu('chinh-sach-doi-tra') }}">
                                 <a href="/chinh-sach-doi-tra">Chính sách</a>
                             </li>
-                            <li class="header__navbar-item">
+                            <li class="header__navbar-item {{ active_menu('gioi-thieu') }}">
                                 <a href="/gioi-thieu">Giới thiệu</a>
                             </li>
                         </ul>

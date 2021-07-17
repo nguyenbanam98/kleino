@@ -24,9 +24,9 @@
                   <div class="card-wrap">
                       <div class="card-header">
                           <h4></h4>
-                      </div>Admin
+                      </div>Tổng doanh thu
                       <div class="card-body">
-                          {{ $admins }}
+                          {{ number_format($total) }}đ
                       </div>
                   </div>
               </div>

@@ -133,6 +133,7 @@
         </div>
     </div>
 </div>
+<x-shop.related-products :product="$product"/>
 
 <div class="divzoom">
     <div class="divzoom__main">

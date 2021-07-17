@@ -125,10 +125,12 @@
                         <div class="section__title">
                             <h3>Thông tin giao hàng</h3>
                         </div>
-                            <div class="content__text">
-                                <span>Bạn đã có tài khoản?</span>
-                                <a href="/dang-nhap">Đăng nhập</a>
-                            </div>
+                            @guest('customer')
+                                <div class="content__text">
+                                    <span>Bạn đã có tài khoản?</span>
+                                    <a href="/dang-nhap">Đăng nhập</a>
+                                </div>
+                            @endguest
                             <form action="{{route('checkout')}}" method="post" novalidate="novalidate">
                                 @csrf
                             <div class="section__fieldset">

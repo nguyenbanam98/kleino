@@ -43,11 +43,53 @@
                         <p>{{ $user->email ?? '' }}</p>
                     </div>
                 </div>
-                <div class="account__order">
-                    <div class="table">
-                        <p>Bạn chưa đặt mua sản phẩm nào</p>
+                @if($transactions->isEmpty())
+                    <div class="account__order">
+                        <div class="table">
+                            <p>Bạn chưa đặt mua sản phẩm nào</p>
+                        </div>
                     </div>
-                </div>
+                @else
+                    <div class="account__order">
+                        <div class="order__table">
+                            <p class="order__table-title">Danh sách đơn hàng mới nhất</p>
+                            <div class="order__table-content">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th class="order__number text__center">
+                                            Mã đơn hàng
+                                        </th>
+                                        <th class="order__date text__center">
+                                            Ngày đặt
+                                        </th>
+                                        <th class="order__price text__center">
+                                            Thành tiền
+                                        </th>
+                                        <th class="order__payment text__center">
+                                            Thanh toán
+                                        </th>
+                                        <th class="order__transport text__center">
+                                            Vận chuyển
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($transactions as $transaction)
+                                        <tr>
+                                            <td class="text__center">#00{{ $transaction->id }}</td>
+                                            <td class="text__center">{{ $transaction->created_at->format('Y-m-d') }}</td>
+                                            <td class="text__center">{{number_format($transaction->total_money)}}₫</td>
+                                            <td class="text__center">{{$transaction->getType($transaction->type)['name']}}</td>
+                                            <td class="text__center">{{$transaction->getStatus($transaction->status)['name']}}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

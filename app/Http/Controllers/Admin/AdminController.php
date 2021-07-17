@@ -13,11 +13,11 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $admins = User::query()->count();
         $articles = Article::query()->whereDate('created_at', '>', Carbon::now()->subMonth())->count();
         $users = Customer::query()->count();
         $transactions = Transaction::query()->whereDate('created_at', '>', Carbon::now()->subMonth())->where('status', 3)->count();
+        $total = Transaction::query()->where('status', 3)->get()->sum('total_money');
 
-        return view('admin.index', compact('admins', 'articles', 'users', 'transactions'));
+        return view('admin.index', compact('articles', 'users', 'transactions', 'total'));
     }
 }

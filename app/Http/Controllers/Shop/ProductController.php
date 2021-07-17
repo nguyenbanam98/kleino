@@ -74,7 +74,6 @@ class ProductController extends Controller
 
     public function updateQty(Request $request)
     {
-
         $qty = $request->input('quantity');
         $id = $request->input('id');
         Cart::update($id, $qty);
@@ -103,7 +102,7 @@ class ProductController extends Controller
                 ->where('name', 'LIKE', "%{$keyword}%")
                 ->paginate(20);
 
-        if (!empty($keyword)) {
+        if (!empty($keyword) && !$products->isEmpty()) {
             return view('shop.page.search', compact('products', 'keyword'));
         }
 

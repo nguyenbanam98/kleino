@@ -57,9 +57,9 @@
                                         </div>
                                     </article>
                                     @endforeach
-                                        {{ $articles->links('shop.pagination.pagination') }}
                                 </div>
                             </div>
+                            {{ $articles->links('shop.pagination.pagination') }}
                         </div>
                         <x-shop.article />
                     </div>

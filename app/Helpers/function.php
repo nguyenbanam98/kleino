@@ -18,3 +18,14 @@ if (!function_exists('number_price'))
         return ((100 - $sale) * $price) / 100;
     }
 }
+
+if (!function_exists('active_menu'))
+{
+    function active_menu($path = '/')
+    {
+        if (request()->path() === $path) {
+            return 'active';
+        }
+        return '';
+    }
+}

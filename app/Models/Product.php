@@ -49,7 +49,6 @@ class Product extends Model
         return Arr::get($this->hotStatus, $this->hot, '[N\A]');
     }
 
-
     public function images()
     {
         return $this->hasMany(ProductImage::class, 'product_id');
