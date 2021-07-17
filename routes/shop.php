@@ -26,7 +26,7 @@ Route::group([
     Route::get('tin-tuc', 'ArticleController@index');
     Route::get('tin-tuc/{slug}', 'ArticleController@show');
     Route::get('thanh-toan', 'ProductController@checkout');
-    Route::get('thanh-toan/thanh-cong', 'ProductController@checkoutSuccess')->name('checkout.success');
+    Route::get('thanh-toan/thanh-cong/{id}', 'ProductController@checkoutSuccess')->name('checkout.success');
     Route::post('/save-checkout', 'ProductController@save')->name('checkout');
 
     Route::group([

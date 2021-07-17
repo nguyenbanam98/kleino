@@ -1,11 +1,11 @@
 <div class="slider owl-carousel owl-theme">
-    @if(!empty($sliders))
+    @if ($sliders->isEmpty())
+        <div class="slider__item" style="background-image: url({{asset('shop/assets/image/slideshow_2.jpg')}});"></div>
+        <div class="slider__item" style="background-image: url({{asset('shop/assets/image/slideshow_3.jpg')}});"></div>
+    @else
         @foreach($sliders as $slider)
             <div class="slider__item" style="background-image: url({{ $slider->image_path }});"><a href="/san-pham"></a></div>
         @endforeach
-    @else
-        <div class="slider__item" style="background-image: url({{asset('shop/assets/image/slideshow_2.jpg')}});"></div>
-        <div class="slider__item" style="background-image: url({{asset('shop/assets/image/slideshow_3.jpg')}});"></div>
     @endif
 </div>
 <div class="banner__category">
@@ -39,7 +39,6 @@
                 <h3>T-SHIRT</h3>
                 <a href="/danh-muc/ao-phong" class="button">Mua ngay</a>
             </div>
-
         </div>
     </div>
 </div>
