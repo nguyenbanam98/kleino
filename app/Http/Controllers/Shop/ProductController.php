@@ -119,11 +119,10 @@ class ProductController extends Controller
         return view('shop.page.checkout', compact('contents', 'transaction'));
     }
 
-    public function checkoutSuccess()
+    public function checkoutSuccess($id)
     {
         $contents = Cart::content();
-
-        $transaction = get_data_user('customer', 'transaction');
+        $transaction = Transaction::query()->findOrFail($id);
 
         return view('shop.page.checkout_success', compact('contents', 'transaction'));
     }
@@ -149,7 +148,7 @@ class ProductController extends Controller
             Cart::destroy();
             DB::commit();
 
-            return redirect()->route('checkout.success');
+            return redirect()->route('checkout.success', ['id' => $transaction->id]);
         } catch (\Exception $exception) {
             DB::rollBack();
 
@@ -159,13 +158,12 @@ class ProductController extends Controller
 
     public function saveCheckout($request, int $id = null)
     {
-
         return Transaction::query()->updateOrCreate(
             [
                 'id' => $id,
             ],
             [
-                'email' => auth('customer')->user()->email,
+                'email' => $request->email,
                 'customer_id' => Auth::guard('customer')->id(),
                 'name' => $request->name,
                 'phone' => $request->phone,

@@ -24,8 +24,7 @@ class Banner extends Component
      */
     public function render()
     {
-//        $articles = \App\Models\Article::query()->latest()->paginate(3);
-        $sliders = Slider::query()->get();
+        $sliders = Slider::all();
 
         return view('shop.components.banner', compact('sliders'));
     }
